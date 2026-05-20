@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+        }
+        .button{
+            background-color: black;
+            color: white;
+            width: 90px;
+            padding: 10px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .sbuscribeButton{
+            background-color: rgba(240, 255, 255, 0.918);
+            color: black;
+            border: none;
+            transition: transform 0.3s ease;
+        }
+        input{
+            padding: 10px;
+            width: 180px;
+            border: 1px solid black;
+            border-radius: 3px;
+        }
+        .calculateButton{
+            background-color: rgb(22, 193, 22);
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 10px;
+            width: 90px;
+            border: none;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .button:hover,
+        .sbuscribeButton:hover,
+        .calculateButton:hover{
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <p>Youtube Subscribe Button</p>
+    <button title="God Job!" 
+            class="js-button button"
+            onclick="Subscribe()"
+    >Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input type= "text" placeholder="Enter Cost" class="js-input" onkeydown="handleOnkekeyDown(event)">
+    <button class="calculateButton" onclick="CalculateCost()">Calculate</button>
+    <p class="js-inputresult"></p>
+
+    <p style="margin-top: 50px;">Rock Paper Scissor Game</p>
+    <a href="RockPapperSessiorGame.html">click here</a>
+
+    <script>
+        document.title = 'DOM';
+
+        function Subscribe()
+        {
+            let button = document.querySelector('.js-button');
+
+            if(button.innerText === 'Subscribe')
+            {
+                button.innerHTML = 'Subscribed';
+                button.classList.add('sbuscribeButton');
+            }
+            else
+            {
+                button.innerHTML = 'Subscribe';
+                button.classList.remove('sbuscribeButton');
+            }
+        }
+
+        function CalculateCost()
+        {
+            let num = Number(document.querySelector('.js-input').value);
+            let res = document.querySelector('.js-inputresult');
+
+            if(isNaN(num))
+                res.innerHTML = 'please enter a valid Number';
+            else if(num < 40)
+                res.innerHTML = `$${num + 10}`;
+            else
+                res.innerHTML = `$${num}`;
+        }
+
+        function handleOnkekeyDown(event)
+        {
+            if(event.key === 'Enter')
+              CalculateCost();
+        }
+    </script>
+</body>
+</html>
