@@ -8,7 +8,7 @@ updateScoreElement();
 
 function pickComputerMove()
 {
-    let randomNumber = Math.random();
+    const randomNumber = Math.random();
     let computerMove = '';
 
     if(randomNumber >= 0 && randomNumber < 1/3)
@@ -100,3 +100,15 @@ function reSetScore()
     updateScoreElement();
     //alert('score was reseted');
 }
+
+document.body.addEventListener('keydown', (event) => {
+    event.preventDefault();
+    if(event.key === 'r')
+        playGame('rock');
+    else if(event.key === 'p')
+        playGame('paper');
+    else if(event.key === 's')
+        playGame('scissors');
+    else if(event.key === 'Enter')
+        reSetScore();
+});

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo-List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-------------------level 1 of todo list---------------------->
+    <p>Todo List Practice 1</p>
+
+    <input type="text" 
+           placeholder="Todo name"
+           class="input1 js-input1">
+
+    <button class="add-button1 js-add-button1"
+            onclick="addToDo1()">Add
+    </button>
+
+<!-------------------level 2 of todo list---------------------->
+    <p style="margin-top: 50px;">Todo List Practice 2</p>
+
+    <input type="text" 
+           placeholder="Todo name"
+           class="input2 js-input2">
+
+    <button class="add-button2 js-add-button2"
+            onclick="addToDo2()">Add</button>
+
+    <div class="js-todo-list1"></div>
+
+<!-------------------level 3 of todo list---------------------->
+    <p style="margin-top: 50px;">Todo List Practice 3</p>
+
+    <div class="todo-input-grid">
+        <input type="text" 
+               placeholder="Todo name"
+               class="input3 js-input3">
+
+        <input type="date" class="input-date js-input-date">
+
+        <button class="add-button3 js-add-button3"
+                onclick="addToDo3()">Add</button>
+    </div>
+
+    <div class="js-todo-list2 todo-grid"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
